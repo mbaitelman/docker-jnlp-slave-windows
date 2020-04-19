@@ -16,7 +16,7 @@ jobs:
     runs-on: windows-2019
     steps:
       - run: 'docker build . --file Dockerfile'
-        shell: powershell
+        shell: cmd
         name: 'Build container'
       - run: 'docker login  -u $env:DOCKER_USERNAME -p $env:envDOCKER_PASSWORD'
         shell: powershell
