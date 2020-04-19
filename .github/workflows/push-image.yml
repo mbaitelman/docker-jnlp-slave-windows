@@ -13,7 +13,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   push:
-    runs-on: windows-latest
+    runs-on: windows-2019
     steps:
       - run: 'docker build . --file Dockerfile'
         shell: powershell
