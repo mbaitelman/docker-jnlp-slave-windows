@@ -27,13 +27,14 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run tests
+        shell: powershell
         run: |
-          if [ -f docker-compose.test.yml ]; then
+          if(Test-Path docker-compose.test.yml){
             docker-compose --file docker-compose.test.yml build
             docker-compose --file docker-compose.test.yml run sut
-          else
+          } Else
             docker build . --file Dockerfile
-          fi
+          }
 
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
