@@ -21,3 +21,4 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: myorg/myrepository
         tags: latest
+        push: false
