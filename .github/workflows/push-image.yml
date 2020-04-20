@@ -19,7 +19,7 @@ jobs:
       - run: 'docker build .'
         shell: cmd
         name: 'Build container'
-      - run: 'docker login  -u $env:DOCKER_USERNAME -p $env:envDOCKER_PASSWORD'
+      - run: 'winpty docker login  -u $env:DOCKER_USERNAME -p $env:envDOCKER_PASSWORD'
         shell: powershell
         name: 'Login to docker Hub'
         env:
