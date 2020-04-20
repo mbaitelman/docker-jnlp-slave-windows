@@ -15,8 +15,8 @@ jobs:
   push:
     runs-on: windows-2019
     steps:
-      - run: 'dir'
-        shell: cmd
+      - run: 'gci ..'
+        shell: powershell
       - run: 'docker build .'
         shell: cmd
         name: 'Build container'
