@@ -15,7 +15,7 @@ jobs:
   push:
     runs-on: windows-2019
     steps:
-      - run: 'ls'
+      - run: 'dir'
         shell: cmd
       - run: 'docker build .'
         shell: cmd
