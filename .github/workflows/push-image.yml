@@ -19,7 +19,7 @@ jobs:
       - run: 'docker build .'
         shell: cmd
         name: 'Build container'
-      - run: '$env:envDOCKER_PASSWORD | docker login -u $env:DOCKER_USERNAME --password-stdin'
+      - run: '$env:DOCKER_PASSWORD | docker login -u $env:DOCKER_USERNAME --password-stdin'
         shell: powershell
         name: 'Login to docker Hub'
         env:
