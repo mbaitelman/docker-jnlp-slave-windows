@@ -19,12 +19,12 @@ jobs:
       - run: 'docker build .'
         shell: cmd
         name: 'Build container'
-      - run: 'winpty docker login  -u $env:DOCKER_USERNAME -p $env:envDOCKER_PASSWORD'
+      - run: '$env:envDOCKER_PASSWORD | docker login -u $env:DOCKER_USERNAME --password-stdin'
         shell: powershell
         name: 'Login to docker Hub'
         env:
           username: ${{ secrets.DOCKER_USERNAME }}	      
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - run: 'docker push mbaitelman/jnlp-slave-windows:latest'
-        name: 'Push latest tag'
-        shell: powershell
+#       - run: 'docker push mbaitelman/jnlp-slave-windows:latest'
+#         name: 'Push latest tag'
+#         shell: powershell
