@@ -1,0 +1,23 @@
+name: push docker
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+runs-on: windows-latest
+steps:
+  - uses: actions/checkout@v1.0
+    name: Check out code
+
+  - uses: mr-smithers-excellent/docker-build-push@v3
+    name: Build & push Docker image
+    with:
+      image: mbaitelman/jnlp-slave-windows
+      registry: docker.io
+      tag: testing
+      username: ${{ secrets.DOCKER_USERNAME }}
+      password: ${{ secrets.DOCKER_PASSWORD }}   
