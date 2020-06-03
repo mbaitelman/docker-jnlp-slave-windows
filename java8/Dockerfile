@@ -1,4 +1,4 @@
-FROM openjdk:8-nanoserver
+FROM openjdk:8-windowsservercore-1809
 
 ADD https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/4.2.1/remoting-4.2.1.jar slave.jar
 COPY "slave-launch.ps1" ".\slave-launch.ps1"
